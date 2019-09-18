@@ -1,0 +1,184 @@
+# CsI_NaI_neg_08.mzXML, spectra[43] # nice point on chromatogram
+204.9308901453327, 34361
+205.16015740246476, 10191
+188.8991974044173, 1674
+129.01592076098714, 310
+61.00170193694177, 122
+65.00159326982329, 116
+208.14225244191456, 1221
+215.00463462262692, 21596
+50.011132614520875, 5379
+239.06590388648888, 76542019-09-16T165139: feature extraction started
+2019-09-16T165427: feature extraction started
+Feature extraction finished, 18.594974994659424 seconds elapsed
+QC characteristics has been computed successfully
+2019-09-16T165533: feature extraction started
+2019-09-16T165612: feature extraction started
+Feature extraction finished, 17.072330951690674 seconds elapsed
+QC characteristics has been computed successfully
+2019-09-16T170743: feature extraction started
+Feature extraction finished, 17.352797985076904 seconds elapsed
+QC characteristics has been computed successfully
+2019-09-16T172648: feature extraction started
+Feature extraction finished, 18.112430095672607 seconds elapsed
+QC characteristics has been computed successfully
+2019-09-17T104135: feature extraction started
+Feature extraction finished, 18.02339196205139 seconds elapsed
+QC characteristics has been computed successfully
+2019-09-17T104948: feature extraction started
+Feature extraction finished, 16.91864800453186 seconds elapsed
+QC characteristics has been computed successfully
+2019-09-17T105216: feature extraction started
+Feature extraction finished, 17.47008180618286 seconds elapsed
+QC characteristics has been computed successfully
+2019-09-17T110211: feature extraction started
+Feature extraction finished, 18.313172101974487 seconds elapsed
+QC characteristics has been computed successfully
+New QC database has been created (SQLite)
+2019-09-17T110856: feature extraction started
+2019-09-17T110918: feature extraction started
+Feature extraction finished, 18.500741958618164 seconds elapsed
+QC characteristics has been computed successfully
+2019-09-17T111017: feature extraction started
+Feature extraction finished, 17.293293952941895 seconds elapsed
+QC characteristics has been computed successfully
+New QC database has been created (SQLite)
+Feature matrix has been updated
+
+2019-09-17T111040: feature extraction started
+Feature extraction finished, 16.88563084602356 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-17T111104: feature extraction started
+Feature extraction finished, 21.914855003356934 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-17T112628: feature extraction started
+Feature extraction finished, 17.498614072799683 seconds elapsed
+QC characteristics has been computed successfully
+2019-09-17T112730: feature extraction started
+Feature extraction finished, 19.71006488800049 seconds elapsed
+QC characteristics has been computed successfully
+New QC database has been created (SQLite)
+Feature matrix has been updated
+
+2019-09-17T112756: feature extraction started
+Feature extraction finished, 17.97958517074585 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-17T112821: feature extraction started
+Feature extraction finished, 19.829092979431152 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-17T112906: feature extraction started
+Feature extraction finished, 17.397613763809204 seconds elapsed
+QC characteristics has been computed successfully
+2019-09-17T112944: feature extraction started
+Feature extraction finished, 19.006857872009277 seconds elapsed
+QC characteristics has been computed successfully
+New QC database has been created (SQLite)
+Feature matrix has been updated
+
+2019-09-17T113009: feature extraction started
+Feature extraction finished, 17.910155057907104 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-17T113034: feature extraction started
+Feature extraction finished, 19.546719074249268 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-17T113320: feature extraction started
+Feature extraction finished, 18.987586736679077 seconds elapsed
+QC characteristics has been computed successfully
+2019-09-17T113759: feature extraction started
+Feature extraction finished, 18.060062170028687 seconds elapsed
+QC characteristics has been computed successfully
+New QC database has been created (SQLite)
+Feature matrix has been updated
+
+2019-09-17T113822: feature extraction started
+Feature extraction finished, 16.961950063705444 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-17T113846: feature extraction started
+Feature extraction finished, 18.594764947891235 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-17T133850: feature extraction started
+Feature extraction finished, 16.99135112762451 seconds elapsed
+QC characteristics has been computed successfully
+2019-09-17T133933: feature extraction started
+Feature extraction finished, 19.445508003234863 seconds elapsed
+QC characteristics has been computed successfully
+New QC database has been created (SQLite)
+Feature matrix has been updated
+
+2019-09-17T133957: feature extraction started
+Feature extraction finished, 16.742527961730957 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-17T134020: feature extraction started
+Feature extraction finished, 19.80916976928711 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-17T161015: feature extraction started
+2019-09-18T085017: feature extraction started
+2019-09-18T085232: feature extraction started
+Feature extraction finished, 2182.7684812545776 seconds elapsed
+QC characteristics has been computed successfully
+New QC database has been created (SQLite)
+Feature matrix has been updated
+
+2019-09-18T093029: feature extraction started
+Feature extraction finished, 3958.9235780239105 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-18T103837: feature extraction started
+Feature extraction finished, 602.5779309272766 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-18T105210: feature extraction started
+Feature extraction finished, 580.5276072025299 seconds elapsed
+QC characteristics has been computed successfully
+New QC database has been created (SQLite)
+Feature matrix has been updated
+
+2019-09-18T110231: feature extraction started
+Feature extraction finished, 1025.4059009552002 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-18T111948: feature extraction started
+Feature extraction finished, 403.79623579978943 seconds elapsed
+QC characteristics has been computed successfully
+QC database has been updated
+Feature matrix has been updated
+
+2019-09-18T113007: feature extraction started
+2019-09-18T113534: feature extraction started
+2019-09-18T115837: feature extraction started
