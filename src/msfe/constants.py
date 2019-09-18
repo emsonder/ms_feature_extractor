@@ -1,10 +1,12 @@
 
-msfe_version = '0.3.8'
-chemical_mix_id = '1'
+#chemical_mix_id = '1'
+msfe_version = '0.3.12'
+chemical_mix_id = '20190522_4GHz'
 
 """ Mass-spec features extractor constants """
 
 # qc_log_location = "/mnt/nas2/fiaqc-out/qc_logs.txt"
+
 qc_log_location = '/Users/emanuelsonder/PycharmProjects/ms_feature_extractor-master/data/annotated_peaks.txt'
 #qc_log_location = "/Users/andreidm/ETH/projects/ms_feature_extractor/res/qc_logs.txt"
 
@@ -21,6 +23,7 @@ feature_matrix_file_path = "/Users/emanuelsonder/Documents/CBB/AS_19/Labrotation
 ms_settings_matrix_file_path = "/Users/andreidm/ETH/projects/ms_feature_extractor/res/ms_settings_matrix.json"
 
 # expected_peaks_file_path = "/home/nzadmin/msqc/msfe/data/expected_peaks_v" + chemical_mix_id + ".json"
+
 expected_peaks_file_path = "/Users/emanuelsonder/PycharmProjects/ms_feature_extractor-master/data/expected_peaks_v1.json"
 # expected_peaks_file_path = "/Users/andreidm/ETH/projects/ms_feature_extractor/data/expected_peaks_v" + chemical_mix_id + ".json"
 
@@ -66,10 +69,9 @@ frame_intensity_percentiles = [25, 50, 75]
 qc_matrix_file_path = feature_matrix_file_path.replace('feature_matrix','qc_matrix')
 
 #qc_database_path = '/Users/emanuelsonder/test.db'
-
 qc_database_path = '/Users/emanuelsonder/Documents/CBB/AS_19/Labrotation_1/ms_feature_extractor/sample_qc_matrix.db'
-
 #qc_database_path = '/Users/andreidm/ETH/projects/qc_metrics/res/qc_matrix.db'
+
 
 # features names
 resolution_200_features_names = ['absolute_mass_accuracy_Caffeine_i1_mean', 'widths_Caffeine_i1_1_mean']  # 193.0725512871

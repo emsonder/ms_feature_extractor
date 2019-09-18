@@ -5,7 +5,11 @@ from src.msfe.constants import feature_matrix_file_path, ms_settings_matrix_file
 from src.msfe.constants import chemical_mix_id, msfe_version
 from src.msfe.constants import qc_database_path
 
+<<<<<<< HEAD
 from src.qcmg import metrics_generator #, parse_expected_ions
+=======
+from src.qcmg import metrics_generator
+>>>>>>> 0fb18e0d7dd9b2adead18a2058d1fc746f46022c
 from src.msfe import logger
 from pyopenms import EmpiricalFormula, CoarseIsotopePatternGenerator
 import json, os, datetime

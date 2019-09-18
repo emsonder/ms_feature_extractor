@@ -8,6 +8,7 @@
 208.14225244191456, 1221
 215.00463462262692, 21596
 50.011132614520875, 5379
+<<<<<<< HEAD
 239.06590388648888, 76542019-09-16T165139: feature extraction started
 2019-09-16T165427: feature extraction started
 Feature extraction finished, 18.594974994659424 seconds elapsed
@@ -182,3 +183,6 @@ Feature matrix has been updated
 2019-09-18T113007: feature extraction started
 2019-09-18T113534: feature extraction started
 2019-09-18T115837: feature extraction started
+=======
+239.06590388648888, 7654
+>>>>>>> 0fb18e0d7dd9b2adead18a2058d1fc746f46022c

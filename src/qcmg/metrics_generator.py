@@ -63,7 +63,8 @@ def add_accuracy_metrics(qc_values, qc_names, ms_run, in_debug_mode=False):
 
         values.append(value)
         if value != -1.:  # if this is not a missing value
-            values_sum += value
+            values_sum += abs(value)  # abs for absolute mass accuracy values
+
 
     total_non_missing = sum(numpy.array(values) != -1.)
     average_accuracy = values_sum / total_non_missing
@@ -365,7 +366,9 @@ def calculate_and_save_qc_metrics_for_ms_run(ms_run):
         'msfe_version': ms_run['msfe_version'],
         'scans_processed': ms_run['scans_processed'],
         'qc_values': qc_values,
-        'qc_names': qc_names
+        'qc_names': qc_names,
+        'user_comment': "",
+        'quality': 1
     }
 
     logger.print_qc_info('QC characteristics has been computed successfully')

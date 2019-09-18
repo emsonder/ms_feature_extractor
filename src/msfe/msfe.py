@@ -159,7 +159,8 @@ def get_peak_fit(spectrum, actual_peak_info):
     signal_fit_ppm = signal_fit_mass_diff / predicted_peak_mz * 10 ** 6
 
     # find absolute mass accuracy and ppm for fit related to expected (theoretical) value
-    fit_theory_mass_diff = predicted_peak_mz - theoretical_mz
+
+    fit_theory_mass_diff = abs(predicted_peak_mz - theoretical_mz)
     fit_theory_ppm = fit_theory_mass_diff / theoretical_mz * 10 ** 6
 
     fit_info = {
@@ -800,7 +801,7 @@ def extract_features_from_ms_run(spectra, ms_run_ids, in_test_mode=False):
         if len(main_features_names) > 0:
             scan_features, _ = extract_main_features_from_scan(spectra[scan_index], scan_type='normal', get_names=False)
         else:
-            scan_features, main_features_names = extract_main_features_from_scan(spectra[scan_index], scan_type='normal')
+            scan_features, main_features_names = extract_main_features_from_scan(spectra[scan_index],scan_type='normal')
 
         main_features.append(scan_features)
 
@@ -864,6 +865,7 @@ if __name__ == '__main__':
     # '/Users/andreidm/ETH/projects/ms_feature_extractor/data/nas2/'
     # path_to_files = '/Users/andreidm/ETH/projects/ms_feature_extractor/data/chem_mix_v1/test2/'
     # path_to_files = '/Users/andreidm/ETH/projects/ms_feature_extractor/data/chem_mix_v1/test1/'
+
 
     for root, dirs, files in os.walk(path_to_files):
 
