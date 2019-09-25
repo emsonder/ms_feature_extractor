@@ -2,7 +2,6 @@
 import json, os, numpy
 
 from src.qcmg import db_connector
-from src.msfe.constants import feature_matrix_file_path as f_matrix_path
 from src.msfe.constants import qc_matrix_file_path as qc_matrix_path
 from src.msfe.constants import resolution_200_features_names, resolution_700_features_names
 from src.msfe.constants import accuracy_features_names, dirt_features_names, isotopic_presence_features_names

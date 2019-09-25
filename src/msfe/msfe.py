@@ -743,7 +743,7 @@ def aggregate_features(list_of_scans_features, features_names):
         return aggregated_main_features, aggregated_main_features_names
 
 
-def extract_features_from_ms_run(spectra, ms_run_ids, in_test_mode=False):
+def extract_features_from_ms_run(spectra, ms_run_ids, feature_matrix_file_path, in_test_mode=False):
     """ This is main method of the module. It extracts all the features from a single ms run (several scans)
         and returns single row of feature matrix (list) together with feature names (list)."""
 
@@ -809,43 +809,43 @@ def extract_features_from_ms_run(spectra, ms_run_ids, in_test_mode=False):
     aggregated_main_features, aggregated_main_features_names = aggregate_features(main_features, main_features_names)
 
     # get chemical noise features for every scan
-    chemical_noise_features = []
-    chemical_noise_features_names = []
-    for scan_index in chemical_noise_features_scans_indexes:
-
-        if len(chemical_noise_features_names) > 0:
-            scan_features, _ = extract_main_features_from_scan(spectra[scan_index], scan_type='chemical_noise', get_names=False)
-        else:
-            scan_features, chemical_noise_features_names = extract_main_features_from_scan(spectra[scan_index], scan_type='chemical_noise')
-
-        chemical_noise_features.append(scan_features)
-
-    # aggregate chemical noise features and add to the feature matrix
-    aggregated_chemical_noise_features, aggregated_chemical_noise_features_names = aggregate_features(chemical_noise_features, chemical_noise_features_names)
+    # chemical_noise_features = []
+    # chemical_noise_features_names = []
+    # for scan_index in chemical_noise_features_scans_indexes:
+    #
+    #     if len(chemical_noise_features_names) > 0:
+    #         scan_features, _ = extract_main_features_from_scan(spectra[scan_index], scan_type='chemical_noise', get_names=False)
+    #     else:
+    #         scan_features, chemical_noise_features_names = extract_main_features_from_scan(spectra[scan_index], scan_type='chemical_noise')
+    #
+    #     chemical_noise_features.append(scan_features)
+    #
+    # # aggregate chemical noise features and add to the feature matrix
+    # aggregated_chemical_noise_features, aggregated_chemical_noise_features_names = aggregate_features(chemical_noise_features, chemical_noise_features_names)
 
     # get features related to instrument noise for every scan
-    instrument_noise_features = []
-    instrument_noise_features_names = []
-    for scan_index in instrument_noise_features_scans_indexes:
-        if len(instrument_noise_features_names) > 0:
-            scan_features, _ = extract_background_features_from_scan(spectra[scan_index], get_names=False)
-        else:
-            scan_features, instrument_noise_features_names = extract_background_features_from_scan(spectra[scan_index])
-
-        instrument_noise_features.append(scan_features)
-
-    # aggregate instrument noise features and add to the feature matrix
-    aggregated_instrument_noise_features, aggregated_instrument_noise_features_names = aggregate_features(instrument_noise_features, instrument_noise_features_names)
+    # instrument_noise_features = []
+    # instrument_noise_features_names = []
+    # for scan_index in instrument_noise_features_scans_indexes:
+    #     if len(instrument_noise_features_names) > 0:
+    #         scan_features, _ = extract_background_features_from_scan(spectra[scan_index], get_names=False)
+    #     else:
+    #         scan_features, instrument_noise_features_names = extract_background_features_from_scan(spectra[scan_index])
+    #
+    #     instrument_noise_features.append(scan_features)
+    #
+    # # aggregate instrument noise features and add to the feature matrix
+    # aggregated_instrument_noise_features, aggregated_instrument_noise_features_names = aggregate_features(instrument_noise_features, instrument_noise_features_names)
 
     # compose feature matrix row (values)
     feature_matrix_row.extend(aggregated_main_features)
-    feature_matrix_row.extend(aggregated_chemical_noise_features)
-    feature_matrix_row.extend(aggregated_instrument_noise_features)
+    #feature_matrix_row.extend(aggregated_chemical_noise_features)
+    #feature_matrix_row.extend(aggregated_instrument_noise_features)
 
     # compose feature matrix row (names)
     feature_matrix_row_names.extend(aggregated_main_features_names)
-    feature_matrix_row_names.extend(aggregated_chemical_noise_features_names)
-    feature_matrix_row_names.extend(aggregated_instrument_noise_features_names)
+    #feature_matrix_row_names.extend(aggregated_chemical_noise_features_names)
+    #feature_matrix_row_names.extend(aggregated_instrument_noise_features_names)
 
     logger.print_qc_info("Feature extraction finished, " + str(time.time() - start_time) + " seconds elapsed")
 
@@ -853,7 +853,7 @@ def extract_features_from_ms_run(spectra, ms_run_ids, in_test_mode=False):
                        'chemical_noise': chemical_noise_features_scans_indexes,
                        'instrument_noise': instrument_noise_features_scans_indexes}
 
-    parser.update_feature_matrix(feature_matrix_row, feature_matrix_row_names, ms_run_ids, scans_processed)
+    parser.update_feature_matrix(feature_matrix_row, feature_matrix_row_names, feature_matrix_file_path, ms_run_ids, scans_processed)
     logger.print_qc_info("Feature matrix has been updated\n")
 
     print(time.time() - start_time, " seconds elapsed for processing in total\n", sep='')
@@ -861,37 +861,28 @@ def extract_features_from_ms_run(spectra, ms_run_ids, in_test_mode=False):
 
 if __name__ == '__main__':
 
-    path_to_files = '/Users/emanuelsonder/Documents/CBB/AS_19/Labrotation_1/ms_feature_extractor/samples/'
+    path_to_files = '/Users/emanuelsonder/Desktop/mzXML/'
+    out_path = '/Users/emanuelsonder/Desktop/out_mzXML/'
     # '/Users/andreidm/ETH/projects/ms_feature_extractor/data/nas2/'
     # path_to_files = '/Users/andreidm/ETH/projects/ms_feature_extractor/data/chem_mix_v1/test2/'
     # path_to_files = '/Users/andreidm/ETH/projects/ms_feature_extractor/data/chem_mix_v1/test1/'
+    files = sorted(os.listdir(path_to_files))
+    for file in files:
+        if file != '.DS_Store':
 
+            feature_matrix_file_path = out_path + 'feature_matrix_' + file[:-6] + '.json'
+            start_time = time.time()
+            print(file, 'file is being processed')
 
-    for root, dirs, files in os.walk(path_to_files):
+            spectra = list(mzxml.read(path_to_files + file))
 
-        dirs = sorted(dirs)  # to make it chronological
+            # ms_run_ids = {'date': datetime.datetime.now().strftime("%Y-%m-%dT%H%M%S"), 'original_filename': filename}
+            ms_run_ids = {'processing_date': datetime.datetime.now().strftime("%Y-%m-%dT%H%M%S"), 'original_filename': file}
 
-        # for filename in files:
-        for dir in dirs:
+            extract_features_from_ms_run(spectra, ms_run_ids, feature_matrix_file_path, in_test_mode=True)
 
-            # if filename != '.DS_Store':
-            if dir != '.DS_Store':
-
-                start_time = time.time()
-                print(dir, 'file is being processed')
-
-                spectra = list(mzxml.read(path_to_files+dir+'/raw.mzXML'))
-
-                # ms_run_ids = {'date': datetime.datetime.now().strftime("%Y-%m-%dT%H%M%S"), 'original_filename': filename}
-                ms_run_ids = {'processing_date': datetime.datetime.now().strftime("%Y-%m-%dT%H%M%S"), 'original_filename': dir}
-
-                extract_features_from_ms_run(spectra, ms_run_ids, in_test_mode=True)
-
-                # print(files.index(filename)+1, '/', len(files), 'is processed within', time.time() - start_time, 's\n')
-                print(dirs.index(dir)+1, '/', len(dirs), 'is processed within', time.time() - start_time, 's\n')
+            print(file, ' is processed within', time.time() - start_time, 's\n')
+            # print(files.index(filename)+1, '/', len(files), 'is processed within', time.time() - start_time, 's\n')
+            #print(dirs.index(dir) + 1, '/', len(dirs), 'is processed within', time.time() - start_time, 's\n')
 
     print('All done. Well done!')
-
-    # single file run
-    # ms_run_ids = {'date': datetime.datetime.now().strftime("%Y-%m-%dT%H%M%S"), 'original_filename': 'filename'}
-    # extract_features_from_ms_run([], ms_run_ids, in_test_mode=True)

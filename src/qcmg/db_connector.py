@@ -27,15 +27,6 @@ def create_table(db, create_table_sql):
 def insert_qc_values(db, qc_values):
     """ Adds last runs QC values to the table. """
 
-<<<<<<< HEAD
-    sql = ''' INSERT INTO qc_values(acquisition_date,resolution_200,resolution_700,average_accuracy,
-                                    chemical_dirt,instrument_noise,isotopic_presence,transmission,
-                                    fragmentation_305,fragmentation_712,baseline_25_150,baseline_50_150,
-                                    baseline_25_650,baseline_50_650,signal,s2b,
-                                    s2n)
-                          
-                          VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) '''
-=======
     sql = ''' INSERT INTO qc_values(acquisition_date,quality,resolution_200,resolution_700,
                                     average_accuracy,chemical_dirt,instrument_noise,isotopic_presence,
                                     transmission,fragmentation_305,fragmentation_712,baseline_25_150,
@@ -43,7 +34,6 @@ def insert_qc_values(db, qc_values):
                                     s2b,s2n)
                           
                           VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) '''
->>>>>>> 0fb18e0d7dd9b2adead18a2058d1fc746f46022c
 
     cur = db.cursor()
     cur.execute(sql, qc_values)
@@ -55,19 +45,11 @@ def insert_qc_values(db, qc_values):
 def insert_qc_meta(db, qc_meta):
     """ Adds last runs meta info to the table. """
 
-<<<<<<< HEAD
-    sql = ''' INSERT INTO qc_meta(processing_date,acquisition_date,chemical_mix_id,msfe_version,
-                                  norm_scan_1,norm_scan_2,norm_scan_3,chem_scan_1,
-                                  inst_scan_1)
-                          
-                          VALUES(?,?,?,?,?,?,?,?,?) '''
-=======
     sql = ''' INSERT INTO qc_meta(processing_date,acquisition_date,quality,user_comment,
                                   chemical_mix_id,msfe_version,norm_scan_1,norm_scan_2,
                                   norm_scan_3,chem_scan_1,inst_scan_1)
                           
                           VALUES(?,?,?,?,?,?,?,?,?,?,?) '''
->>>>>>> 0fb18e0d7dd9b2adead18a2058d1fc746f46022c
 
     cur = db.cursor()
     cur.execute(sql, qc_meta)
@@ -81,11 +63,8 @@ def create_qc_database(db_path='/Users/andreidm/ETH/projects/qc_metrics/res/qc_m
     sql_create_qc_meta_table = """ CREATE TABLE IF NOT EXISTS qc_meta (
                                             processing_date text PRIMARY KEY,
                                             acquisition_date text,
-<<<<<<< HEAD
-=======
                                             quality integer,
                                             user_comment text,
->>>>>>> 0fb18e0d7dd9b2adead18a2058d1fc746f46022c
                                             chemical_mix_id integer,
                                             msfe_version text,
                                             norm_scan_1 integer,
@@ -97,10 +76,7 @@ def create_qc_database(db_path='/Users/andreidm/ETH/projects/qc_metrics/res/qc_m
 
     sql_create_qc_values_table = """ CREATE TABLE IF NOT EXISTS qc_values (
                                             acquisition_date text PRIMARY KEY,
-<<<<<<< HEAD
-=======
                                             quality integer,
->>>>>>> 0fb18e0d7dd9b2adead18a2058d1fc746f46022c
                                             resolution_200 integer,
                                             resolution_700 integer,
                                             average_accuracy real,
@@ -142,11 +118,8 @@ def create_and_fill_qc_database(qc_matrix, debug=False):
         run_meta = (
             qc_run['processing_date'],
             qc_run['acquisition_date'],
-<<<<<<< HEAD
-=======
             qc_run['quality'],
             qc_run['user_comment'],
->>>>>>> 0fb18e0d7dd9b2adead18a2058d1fc746f46022c
             qc_run['chemical_mix_id'],
             qc_run['msfe_version'],
             qc_run['scans_processed']['normal'][0],
@@ -158,10 +131,7 @@ def create_and_fill_qc_database(qc_matrix, debug=False):
 
         run_values = (
             qc_run['acquisition_date'],
-<<<<<<< HEAD
-=======
             qc_run['quality'],
->>>>>>> 0fb18e0d7dd9b2adead18a2058d1fc746f46022c
             *qc_run['qc_values']
         )
 
@@ -181,11 +151,8 @@ def insert_new_qc_run(qc_run, in_debug_mode=False):
     run_meta = (
         qc_run['processing_date'],
         qc_run['acquisition_date'],
-<<<<<<< HEAD
-=======
         qc_run['quality'],
         qc_run['user_comment'],
->>>>>>> 0fb18e0d7dd9b2adead18a2058d1fc746f46022c
         qc_run['chemical_mix_id'],
         qc_run['msfe_version'],
         qc_run['scans_processed']['normal'][0],
@@ -197,10 +164,7 @@ def insert_new_qc_run(qc_run, in_debug_mode=False):
 
     run_values = (
         qc_run['acquisition_date'],
-<<<<<<< HEAD
-=======
         qc_run['quality'],
->>>>>>> 0fb18e0d7dd9b2adead18a2058d1fc746f46022c
         *qc_run['qc_values']
     )
 

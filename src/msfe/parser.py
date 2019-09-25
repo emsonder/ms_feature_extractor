@@ -1,15 +1,13 @@
 
 from src.msfe.constants import parser_comment_symbol as sharp
 from src.msfe.constants import parser_description_symbols as brackets
-from src.msfe.constants import feature_matrix_file_path, ms_settings_matrix_file_path
+from src.msfe.constants import ms_settings_matrix_file_path
 from src.msfe.constants import chemical_mix_id, msfe_version
 from src.msfe.constants import qc_database_path
 
-<<<<<<< HEAD
-from src.qcmg import metrics_generator #, parse_expected_ions
-=======
+
 from src.qcmg import metrics_generator
->>>>>>> 0fb18e0d7dd9b2adead18a2058d1fc746f46022c
+
 from src.msfe import logger
 from pyopenms import EmpiricalFormula, CoarseIsotopePatternGenerator
 import json, os, datetime
@@ -203,7 +201,7 @@ def parse_ms_run_instrument_settings(file_path):
     logger.print_tune_info("MS settings matrix updated\n")
 
 
-def update_feature_matrix(extracted_features, features_names, ms_run_ids, scans_processed):
+def update_feature_matrix(extracted_features, features_names, feature_matrix_file_path, ms_run_ids, scans_processed):
     """ This method gets results of single MS run feature extraction
         and updates the general feature matrix. """
 
@@ -218,7 +216,7 @@ def update_feature_matrix(extracted_features, features_names, ms_run_ids, scans_
     }
 
     # entry point for qcm to process new_ms_run and insert into QC database
-    metrics_generator.calculate_and_save_qc_metrics_for_ms_run(new_ms_run)
+    #metrics_generator.calculate_and_save_qc_metrics_for_ms_run(new_ms_run)
 
     if not os.path.isfile(feature_matrix_file_path):
         # if the file does not exist yet, create empty one

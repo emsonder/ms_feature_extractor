@@ -1,0 +1,87 @@
+{
+  "normal": [
+    [
+      "Alanine",
+      "C3H7NO2-"
+    ],
+    [
+      "Arginine",
+      "C6H13N4O2-"
+    ],
+    [
+      "Asparagine",
+      "C4H7N2O3-"
+    ],
+    [
+      "Aspartatic Acid",
+      "C4H6NO4-"
+    ],
+    [
+      "Cysteine",
+      "C3H6NO2S-"
+    ],
+    [
+      "Glutamine",
+      "C4H7N2O3-"
+    ],
+    [
+      "Glutamic Acid",
+      "C5H8NO4-"
+    ],
+    [
+      "Glycine",
+      "C2H4NO2"
+    ],
+    [
+      "Histidine",
+      "C6H8N3O2-"
+    ],
+    [
+      "Isoleucine",
+      "C6H12NO2-"
+    ],
+    [
+      "Leucine",
+      "C6H12NO2-"
+    ],
+    [
+      "Lysine",
+      "C6H13N2O2-"
+    ],
+    [
+      "Methionine",
+      "C5H10NO2S-"
+    ],
+    [
+      "Phenylalanine",
+      "C9H10NO2-"
+    ],
+    [
+      "Proline",
+      "C5H8NO2-"
+    ],
+    [
+      "Serine",
+      "C3H6NO3-"
+    ],
+    [
+      "Threonine",
+      "C4H8NO3-"
+    ],
+    [
+      "Tryptophan",
+      "C11H11N2O2-"
+    ],
+    [
+      "Tyrosine",
+      "C9H10NO3-"
+    ],
+    [
+      "Valine",
+      "C5H10NO2-"
+    ]
+  ],
+  "chemical_noise": [
+  ]
+}
+
