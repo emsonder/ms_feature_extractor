@@ -33,10 +33,10 @@ def parse_expected_ions(file_path, scan_type):
         for j in range(1, len(all_expected_ions[scan_type][i])):
             if all_expected_ions[scan_type][i][j][-1] == '-':
                 # if there is - in the end of the ion name, remove it
-                all_expected_ions[scan_type][i][j] = all_expected_ions[scan_type][i][j][:-1].upper()
+                all_expected_ions[scan_type][i][j] = all_expected_ions[scan_type][i][j][:-1]
             else:
                 # if not, just make sure it's uppercase
-                all_expected_ions[scan_type][i][j] = all_expected_ions[scan_type][i][j].upper()
+                all_expected_ions[scan_type][i][j] = all_expected_ions[scan_type][i][j]
 
     # iterate over ions to parse information
     for ion in all_expected_ions[scan_type]:

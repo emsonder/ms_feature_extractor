@@ -861,11 +861,15 @@ def extract_features_from_ms_run(spectra, ms_run_ids, feature_matrix_file_path, 
 
 if __name__ == '__main__':
 
-    path_to_files = '/Users/emanuelsonder/Desktop/mzXML/'
-    out_path = '/Users/emanuelsonder/Desktop/out_mzXML/'
+    # TODO: Accept a .csv file with precisely mapped files
+
+    path_to_files = '/Users/emanuelsonder/Desktop/rml_samples/mzXML/'
+    out_path = '/Users/emanuelsonder/Desktop/rml_samples/features_mzXML/'
+
     # '/Users/andreidm/ETH/projects/ms_feature_extractor/data/nas2/'
     # path_to_files = '/Users/andreidm/ETH/projects/ms_feature_extractor/data/chem_mix_v1/test2/'
     # path_to_files = '/Users/andreidm/ETH/projects/ms_feature_extractor/data/chem_mix_v1/test1/'
+
     files = sorted(os.listdir(path_to_files))
     for file in files:
         if file != '.DS_Store':
@@ -882,7 +886,5 @@ if __name__ == '__main__':
             extract_features_from_ms_run(spectra, ms_run_ids, feature_matrix_file_path, in_test_mode=True)
 
             print(file, ' is processed within', time.time() - start_time, 's\n')
-            # print(files.index(filename)+1, '/', len(files), 'is processed within', time.time() - start_time, 's\n')
-            #print(dirs.index(dir) + 1, '/', len(dirs), 'is processed within', time.time() - start_time, 's\n')
 
     print('All done. Well done!')

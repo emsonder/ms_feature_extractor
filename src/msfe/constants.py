@@ -23,7 +23,7 @@ feature_matrix_file_path = '/Users/emanuelsonder/PycharmProjects/ms_feature_extr
 # ms_settings_matrix_file_path = "/mnt/nas2/fiaqc-out/s_matrix.json"
 ms_settings_matrix_file_path = "/Users/andreidm/ETH/projects/ms_feature_extractor/res/ms_settings_matrix.json"
 
-expected_peaks_file_path = "/Users/emanuelsonder/PycharmProjects/ms_feature_extractor-master/data/expected_peaks_aa.json"
+expected_peaks_file_path = "/Users/emanuelsonder/PycharmProjects/ms_feature_extractor-master/data/expected_peaks_top_intensity.json"
 
 parser_comment_symbol = '#'
 parser_description_symbols = '()'
@@ -36,7 +36,7 @@ number_of_normal_scans = 3  # for Michelle's method main scans are defined by TI
 # for Michelle's method
 chemical_noise_features_scans_indexes = []
 instrument_noise_features_scans_indexes = []
-normal_scans_indexes_window = [0, 75]
+normal_scans_indexes_window = [0, 30]
 
 peak_widths_levels_of_interest = [0.2, 0.5, 0.8]
 
